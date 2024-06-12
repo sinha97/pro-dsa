@@ -34,3 +34,14 @@ LinkedList.prototype.addAtLast = function (data) {
 
     last.next = newNode;
 }
+
+// add node at a given node
+LinkedList.prototype.addAtGivenNode=function(prevNode,data){
+    if(!prevNode){
+        console.log('Prev node can not be null');
+        return
+    }
+
+    const newNode =new Node (data,prevNode.next)
+    prevNode.next = newNode
+}
