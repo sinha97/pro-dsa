@@ -45,3 +45,11 @@ LinkedList.prototype.addAtGivenNode=function(prevNode,data){
     const newNode =new Node (data,prevNode.next)
     prevNode.next = newNode
 }
+
+// delete the first node 
+LinkedList.prototype.deleteFirstNode = function(){
+    if(!this.head){
+        return
+    }
+    this.head= this.head.next
+}
