@@ -67,7 +67,7 @@ LinkedList.prototype.deleteLastNode = function () {
         return
     }
 
-    
+
     let sLast = this.head;
     while (sLast.next.next) { // continously check the sLast.next.next,if its gives value then just increment the sLast to sLat.next
         sLast = sLast.next
@@ -75,3 +75,33 @@ LinkedList.prototype.deleteLastNode = function () {
     sLast.next = null
 
 }
+
+// delete a node on a given key
+LinkedList.prototype.deleteNodeByKet = function (key) {
+
+    // if list is empty
+    if (!this.head) {
+        console.log('list is empty')
+        return
+    }
+
+    // data found at head
+    if (this.head.data === key) {
+        this.head = this.head.next
+        return
+    }
+
+    // check each node that matches with  given key
+    let current = this.head
+    while (current.next !== null) {
+        if (current.next.data === key) {
+            current.next = current.next.next
+            return
+        }
+        current = current.next
+    }
+
+    // no node is found with matching key
+    console.log('No node is found with matching key :', key)
+}
+
