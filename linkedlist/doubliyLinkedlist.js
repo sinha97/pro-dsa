@@ -18,7 +18,7 @@ class DoublyLinkedList {
 
 // Insert at start in doublyLinkedList
 DoublyLinkedList.prototype.insertAtStart = function (data) {
-    const newNode = new Node(data, this.head, null)
+    const newNode = new myDoublyLinkedListNode(data, this.head, null)
 
     if (this.head !== null) {
         this.head.prev = newNode
@@ -26,5 +26,19 @@ DoublyLinkedList.prototype.insertAtStart = function (data) {
     this.head = newNode
     if (this.tail === null) {
         this.tail = newNode
+    }
+}
+
+//insert at the end in doublylinkedlist
+DoublyLinkedList.prototype.insertAtEnd = function (data) {
+    const newNode = new myDoublyLinkedListNode(data, null, this.tail)
+
+    if (this.tail !== null) {
+        this.tail.next = newNode
+    }
+
+    this.tail = newNode
+    if (this.head === null) {
+        this.head = newNode
     }
 }
