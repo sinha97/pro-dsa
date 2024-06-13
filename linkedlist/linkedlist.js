@@ -116,3 +116,21 @@ LinkedList.prototype.searchNode = function (key) {
 
     return false
 }
+
+// traverse a linkedlist
+LinkedList.prototype.traverseList = function () {
+    let current = this.head
+
+    // if list has no value
+    if (!current) {
+        console.log('there is no list available')
+        return
+    }
+
+    let listValues = []
+    while (current) {
+        listValues.push(current.data) // add data to list
+        current = current.next // move the node to next node
+    }
+    console.log(listValues.join(" ->"))
+}
