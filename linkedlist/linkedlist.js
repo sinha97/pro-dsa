@@ -134,3 +134,18 @@ LinkedList.prototype.traverseList = function () {
     }
     console.log(listValues.join(" ->"))
 }
+
+// reverse a linkedlist
+LinkedList.prototype.reverseList = function () {
+    let current = this.head
+    let prev = null
+    let newNext = null
+
+    while (current) {
+        newNext = current.next
+        current.next = prev
+        prev = current
+        current = newNext
+    }
+    this.head = prev
+}
