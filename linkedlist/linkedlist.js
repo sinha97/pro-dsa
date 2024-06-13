@@ -105,3 +105,14 @@ LinkedList.prototype.deleteNodeByKet = function (key) {
     console.log('No node is found with matching key :', key)
 }
 
+// Search operation
+LinkedList.prototype.searchNode = function (key) {
+    let current = this.head
+    while (current) {
+        if (current.data === key) {
+            return true
+        }
+    }
+
+    return false
+}
