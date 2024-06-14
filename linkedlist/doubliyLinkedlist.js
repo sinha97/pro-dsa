@@ -79,3 +79,19 @@ DoublyLinkedList.prototype.deleteFirstNode = function () {
         this.head.prev = null
     }
 }
+
+// Delete the last node
+DoublyLinkedList.prototype.deleteLastNode = function () {
+    if (!this.tail) {
+        console.log('list is empty');
+        return
+    }
+
+    if (this.head === this.tail) {
+        this.head = null
+        this.tail = null
+    } else {
+        this.tail = this.tail.prev
+        this.tail.next = null
+    }
+}
