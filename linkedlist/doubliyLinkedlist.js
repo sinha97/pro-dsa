@@ -42,3 +42,25 @@ DoublyLinkedList.prototype.insertAtEnd = function (data) {
         this.head = newNode
     }
 }
+
+// insert at a given node
+DoublyLinkedList.prototype.insertAtNode = function (data, prevNode) {
+    // if prevNode is null
+    if (prevNode === null) {
+        console.log('invalid prev node')
+        return
+    }
+
+    // create a new node
+    const newNode = new Node(data, prevNode.next, prevNode);
+
+    if (prevNode.next !== null) {
+        prevNode.next.prev = newNode
+    }
+    prevNode.next = newNode
+
+    // tail 
+    if (newNode.next === null) {
+        this.tail = newNode
+    }
+}
