@@ -81,4 +81,51 @@ class BinarySearchTree {
 
 
     //TODO: : make inorder-predecessor
+
+
+    // inorder traversal 
+    inOrderTraversal() {
+        const result = []
+        this.inorder(this.root, result)
+        return result
+    }
+
+    inorder() {
+        if (node !== null) {
+            this.inorder(node.left, result)
+            result.push(node.key)
+            this.inorder(node.right, result)
+        }
+    }
+
+    // preOrderTraversal
+    preOrderTraversal() {
+        const result = []
+        this.preorder(this.root, result)
+        return result
+    }
+
+    preorder() {
+        if (node !== null) {
+            result.push(node.key)
+            this.preorder(node.left, result)
+            this.preorder(node.right, result)
+        }
+    }
+
+    // postorder traversal
+
+    postOrderTraversal() {
+        const result = []
+        this.postorder(this.root, result)
+        return result
+    }
+
+    postorder() {
+        if (node !== null) {
+            this.postorder(node.left, result)
+            this.postorder(node.right, result)
+            result.push(node.key)
+        }
+    }
 } 
