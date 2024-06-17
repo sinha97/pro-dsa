@@ -23,3 +23,17 @@ const depthirstTraversal=(root)=>{
     }
     return values
 }
+
+// depth first taversal using recurrsive way
+const recurssiveDepthFirstTraversal=(root)=>{
+    if(root===null){
+        return //
+    }
+
+    const leftValues=recurssiveDepthFirstTraversal(root.left)
+    const rightValues=recurssiveDepthFirstTraversal(root.right)
+
+    return [root.key,leftValues,rightValues] // [a,[b,c,d],[e,f,g]]
+
+    // return [root.key,...leftValues,...rightValues] // [a,b,c,d,e,f,g]
+}
