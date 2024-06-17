@@ -45,6 +45,7 @@ class BinarySearchTree {
         this.root = this.deleteNode(this.root, key)
     }
 
+    // inorder-successor
     deleteNode(node, key) { // node -> root
         if (node === null) {
             return null
@@ -61,10 +62,23 @@ class BinarySearchTree {
                 return node.right
             } else if (node.right === null) {
                 return node.left
-            }else{
+            } else {
                 let tempNode = this.findMinNode(node.right)
-                node.key=tempNode.key
+                node.key = tempNode.key
+                node.right = this.deleteNode(node.right, tempNode.key)
             }
         }
+        return node
     }
+
+    //find the smaller node on the rightside
+    findMinNode(node) {
+        while (node.left !== null) {
+            node = node.left
+        }
+        return node
+    }
+
+
+    //TODO: : make inorder-predecessor
 } 
