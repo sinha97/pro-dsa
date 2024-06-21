@@ -21,3 +21,13 @@ const treeSumProblemWithBreadthFirst = (root) => {
     }
     return sum
 }
+
+// depth search solution
+
+const treeSum = (root)=>{
+    if(root===null){
+        return 0
+    }
+
+    return root.key + treeSum(node.left) + treeSum(node.right) // this is recurrsion call
+}
