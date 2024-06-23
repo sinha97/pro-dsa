@@ -29,12 +29,22 @@ function countVowels(string) {
 // ============= Recurssive Approach =================//
 
 function recursiveCountVowel(string, stringLength) {
-    if(stringLength == 0){
-        return 0
-    }
-    
+    console.log(`Length: ${stringLength},current string ${string.substring(0, stringLength)}`)
+    // if (stringLength == 0) {
+    //     return 0
+    // }
+
     if (stringLength == 1) {
+        console.log('Base case reached ')
+        console.log('Base case value: ', Number(isVowel(string[0])))
         return Number(isVowel(string[0]))
     }
-    return recursiveCountVowel(string, string.length - 1) + isVowel(string[stringLength - 1])
+    // return recursiveCountVowel(string, stringLength - 1) + isVowel(string[stringLength - 1])
+
+    const result = recursiveCountVowel(string, stringLength - 1) + isVowel(string[stringLength - 1])
+    console.log(`count after checking ${string[stringLength - 1]}:${result}`)
+    return result
 }
+
+let myString = 'Hello Vivek Kumar'
+console.log(recursiveCountVowel('Hello Vivek Kumar', myString.length))
