@@ -9,6 +9,8 @@ const graph = {
 
 //=== Traversing a graph
 
+// in this first we check we already visited that node or not and after we check for  neighbour
+
 // iterative approach
 function defthFSIterative(graph, start) {
     const stack = [start]
