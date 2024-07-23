@@ -1,13 +1,13 @@
 function maxCountpaths(grid, row = 0, col = 0, memo = {}) {
     
-    const pos = row + "," + col
+     
 
     // return the chache result
     if (pos in memo) {
         return memo[pos]
     }
 
-    if (row >= grid.length || col >= grid[0].length - 1
+    if (row >= grid.length || col >= grid[0].length
         // || grid[row][col] === 'X'
     ) { //X or wall or snake
         return -Infinity

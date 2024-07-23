@@ -1,7 +1,7 @@
 function countpaths(grid, row = 0, col = 0, memo = {}) {
     const pos = row + "," + col
 
-    if (row >= grid.length || col >= grid[0].length - 1 || grid[row][col] === 'X') { //X or wall or snake
+    if (row >= grid.length || col >= grid[0].length  || grid[row][col] === 'X') { //X or wall or snake
         return 0
     }
 
