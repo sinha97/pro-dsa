@@ -1,6 +1,6 @@
 function maxCountpaths(grid, row = 0, col = 0, memo = {}) {
     
-     
+    const pos = row + "," + col
 
     // return the chache result
     if (pos in memo) {
@@ -20,6 +20,6 @@ function maxCountpaths(grid, row = 0, col = 0, memo = {}) {
 
     
 
-    memo[pos] = grid[row][col] + Math.max(countpaths(grid, row + 1, col, memo) + countpaths(grid, row, col + 1, memo))
+    memo[pos] = grid[row][col] + Math.max(countpaths(grid, row + 1, col, memo) , countpaths(grid, row, col + 1, memo))
     return memo[pos]
 }
